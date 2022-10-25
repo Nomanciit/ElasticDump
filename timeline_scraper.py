@@ -42,7 +42,7 @@ class ScrapeData:
 
     def save_data_in_es(self, item):
         response = self.es_obj.index(index=config.ELASTIC_SEARCH_INDEX, id=item.get("post_unique_id", ""),
-                                     document=item)
+                                     doc=item)
         # print (response)
 
     def crawl_more_features(self):
