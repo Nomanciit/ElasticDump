@@ -8,7 +8,7 @@ import datetime
 import ast
 from datetime import timedelta
 import config
-
+from elasticsearch import Elasticsearch
 
 class ScrapeData:
     def __init__(self):
