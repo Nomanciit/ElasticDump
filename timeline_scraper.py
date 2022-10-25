@@ -21,6 +21,7 @@ class ScrapeData:
         auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
         auth.set_access_token(access_token, access_token_secret)
         self.api = tweepy.API(auth)
+        self.es_obj = Elasticsearch(str(config.ELASTIC_SEARCH_HOST)+":"+str(config.ELASTIC_SEARCH_PORT))
 
     def crawl_hashtags_keywords(self, search, start_date, end_date, limit):
         new_tweets_list = []
